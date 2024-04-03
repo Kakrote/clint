@@ -32,3 +32,4 @@ class LoginFrame(ctk.CTkFrame):
         self.pack(fill=tkinter.BOTH, expand=True, padx=20, pady=20)  # Optional for padding
 
 
+
