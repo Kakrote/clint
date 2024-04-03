@@ -1,0 +1,1 @@
+fill=tkinter.BOTH, expand=True,padx=20,pady=20
