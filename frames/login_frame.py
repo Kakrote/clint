@@ -1,38 +1,63 @@
-# login panel
-from typing import Any, Tuple
-import tkinter
 import customtkinter as ctk
+import tkinter
+
+# Entry and Login Panel (Enhanced)
 class Entery(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
-        super().__init__(master=master, fg_color='transparent', **kwargs)
-        self.userid = ctk.CTkLabel(self, text="UserID", font=('Helvetica', 20), text_color='#DAA520')
-        self.e_userid = ctk.CTkEntry(self, placeholder_text="Enter the #id", font=('Helvetica', 10), text_color='black',width=200)
-        self.submit_b=ctk.CTkButton(self,text='Login',fg_color="blue")
+        super().__init__(master=master, fg_color='transparent',border_color="white",border_width=2, **kwargs)
 
+        # for the icon 
+        self.icon=ctk.CTkLabel(self,fg_color="blue",width=100,height=100,text="icon goes here")
+        
+
+        # Create user ID label with better styling (optional)
+        self.userid = ctk.CTkLabel(self, text="UserID:",
+                                   font=('Helvetica', 18, 'bold'),
+                                   text_color='#DAA520')
+
+        # Create entry field with improved styling (optional)
+        self.e_userid = ctk.CTkEntry(self,
+                                     placeholder_text="Enter the ID...",
+                                     font=('Helvetica', 14),
+                                     text_color='black',
+                                     width=200)
+
+        # Create login button with better styling (optional)
+        self.submit_b = ctk.CTkButton(self, text='Login',
+                                      fg_color="blue",
+                                      hover_color="lightblue")
+
+    
     def show(self):
-        # self.grid_columnconfigure(0,weight=1)
-        # self.grid_rowconfigure(0,weight=1)
-        self.userid.grid(row=0, column=0, padx=20, pady=20, sticky='we')
-        self.e_userid.grid(row=0, column=1, padx=20, pady=20, sticky='we')
-        self.submit_b.grid(row=0,column=2,padx=10,pady=20,sticky='we')
+            # Organize elements using grid for precise layout
+        self.icon.grid(row=0, column=0, padx=20, pady=10, sticky='we')
+        self.userid.grid(row=1, column=0, padx=20, pady=10, sticky='we')
+        self.e_userid.grid(row=2, column=0, padx=20, pady=10, sticky='we')
+        self.submit_b.grid(row=3, column=0, padx=20, pady=15, sticky='we')
 
+
+# Main Login Frame (Enhanced)
 class LoginFrame(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
-        super().__init__(master=master, fg_color='white', **kwargs)
-        self.title_page = ctk.CTkLabel(self, text="Login", fg_color='transparent', font=('Garamond', 50), text_color='#00FF00')
+        super().__init__(master=master, fg_color='transparent',border_color="white",border_width=3, **kwargs)
+
+        # Create title using customtkinter label and styling (optional)
+        self.title_page = ctk.CTkLabel(
+            self, text="Login", fg_color='transparent',
+            font=('Garamond', 50), text_color='#00FF00',
+            )
+    def show(self):
+        # Create an instance of the Entery class (enhanced)
         self.entry = Entery(self)
 
-    def show(self):
-        self.title_page.grid(row=0, column=0, sticky='nsew')  # Top row, centered
-
-        # Center the Entery class within LoginFrame using grid
-        self.entry.grid(row=1, column=0, padx=20, pady=20, sticky='nsew')
+        # Place elements using grid for layout control
+        self.title_page.grid(row=0, column=0, sticky='nsew', padx=20, pady=20)
+        self.entry.grid(row=1, column=0, padx=20, pady=20)
         self.entry.show()
 
-        # Configure LoginFrame's grid to allow centering
+        # Configure LoginFrame's grid for centering
         self.grid_columnconfigure(0, weight=1)  # Make the single column flexible
 
-        # Use `pack` to fill remaining space (optional for padding)
-        self.pack(fill=tkinter.BOTH, expand=True, padx=20, pady=20)  # Optional for padding
-
+        # Use `pack` for optional padding and window filling
+        self.pack(fill=tkinter.BOTH, expand=True, padx=20, pady=20)
 

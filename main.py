@@ -8,7 +8,7 @@ class MainPanel(ctk.CTkFrame):
         app.mainpanel.activeframe=frame
         app.mainpanel.activeframe.show()
     def __init__(self,master,**kwargs):
-        super().__init__(master=master,fg_color="#00FF00",**kwargs)
+        super().__init__(master=master,fg_color="transparent",border_color="white",border_width=2,**kwargs)
         self.grid_columnconfigure(0,weight=1)
         self.grid_rowconfigure(0,weight=1)
         self.loginframe=LoginFrame(self)
