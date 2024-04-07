@@ -1,6 +1,7 @@
 import customtkinter as ctk
 import tkinter
 from frames.login_frame import LoginFrame
+from frames.round_one_frame import Round_Frame
 class MainPanel(ctk.CTkFrame):
     loginframe=None
     def setActiveFrame(self,frame):
@@ -12,7 +13,8 @@ class MainPanel(ctk.CTkFrame):
         self.grid_columnconfigure(0,weight=1)
         self.grid_rowconfigure(0,weight=1)
         self.loginframe=LoginFrame(self)
-        self.activeframe=self.loginframe
+        self.round_one_frame=Round_Frame(self)
+        self.activeframe=self.round_one_frame
     def show(self):
         self.activeframe.show()
         self.pack(fill=tkinter.BOTH, expand=True,padx=20,pady=20)  # Fills and expands to center
