@@ -4,8 +4,10 @@ import tkinter
 class Quation_Frame(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master,border_width=2,border_color='white',width=700,height=400, **kwargs)
+        qaution="who is prime minister of India"
+        self.quation_label=ctk.CTkLabel(self,text=qaution,fg_color='white',text_color='black',width=500,height=200)
     def show(self):
-        pass
+        self.quation_label.grid(row=0,column=0,sticky='nesw',padx=20,pady=20)
         
 class Round_Frame(ctk.CTkFrame,ctk.CTk):
     def __init__(self, master, **kwargs):

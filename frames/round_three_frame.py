@@ -6,12 +6,43 @@ class Quation_Frame(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master,width=500, height=500,fg_color='white', **kwargs)
         # for displaying the quation
-        self.desplay_quations=ctk.CTkFrame(self,width=500,height=200,fg_color='blue',border_color='black',border_width=2)
-        # for displaying the options only 
+        self.desplay_quations=ctk.CTkFrame(self,width=500,height=200,fg_color='pink',border_color='black',border_width=2)
+        # quation is here
+        qaution="who is this persion shown in the image"
+        # quation label
+        self.quation_label=ctk.CTkLabel(self.desplay_quations,text=qaution,fg_color='white',text_color='black',width=500,height=200)
+        # fiting the quation level into the quation frame 
+        self.quation_label.pack(expand=True,padx=20,pady=20,fill=tkinter.BOTH)
+
         self.option_1=ctk.CTkFrame(self,width=200,height=100,border_width=1,border_color='black')
+        # option 1 lebel
+        option1="Anshul"
+        self.option_1_label=ctk.CTkLabel(self.option_1,text=option1,fg_color='black',text_color='white',height=100,width=200)
+        #packing the option 1 into the frame option frame
+        self.option_1_label.pack(expand=True,fill=tkinter.BOTH,padx=10,pady=10)
+
         self.option_2=ctk.CTkFrame(self,width=200,height=100,border_width=1,border_color='black')
+        # option 2 lebel
+        option2="Abhay"
+        self.option_2_label=ctk.CTkLabel(self.option_2,text=option2,fg_color='black',text_color='white',height=100,width=200)
+        #packing the option 1 into the frame option frame
+        self.option_2_label.pack(expand=True,fill=tkinter.BOTH,padx=10,pady=10)
+
+
         self.option_3=ctk.CTkFrame(self,width=200,height=100,border_width=1,border_color='black')
+        # option 3 lebel
+        option3="Maghan"
+        self.option_3_label=ctk.CTkLabel(self.option_3,text=option3,fg_color='black',text_color='white',height=100,width=200)
+        #packing the option 1 into the frame option frame
+        self.option_3_label.pack(expand=True,fill=tkinter.BOTH,padx=10,pady=10)
+
         self.option_4=ctk.CTkFrame(self,width=200,height=100,border_width=1,border_color='black')
+        # option 4 lebel
+        option4="Don"
+        self.option_4_label=ctk.CTkLabel(self.option_4,text=option4,fg_color='black',text_color='white',height=100,width=200)
+        #packing the option 1 into the frame option frame
+        self.option_4_label.pack(expand=True,fill=tkinter.BOTH,padx=10,pady=10)
+
     def show(self):
         self.desplay_quations.grid(row=0,column=0,padx=10,pady=10,sticky='nsew')
         self.desplay_quations.grid_columnconfigure(0,weight=1)
