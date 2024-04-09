@@ -1,6 +1,7 @@
 from typing import Any, Tuple
 import customtkinter as ctk
 import tkinter
+from PIL import Image
 class Quation_Frame(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master,width=500, height=500, **kwargs)
@@ -59,7 +60,9 @@ class Round_Two(ctk.CTkFrame):
         # adding timer label
         self.timer=ctk.CTkLabel(self,text='timer',fg_color='blue',width=70,height=30,text_color='white')
         # adding image for the quation in the frame
-        self.image=ctk.CTkLabel(self,image="client/roundtwoimage/test.png",fg_color='white',text_color='black',width=400,height=500)
+        x="roundtwoimage/test.png"
+        img=ctk.CTkImage(Image.open(x),size=(50,50))
+        self.image=ctk.CTkLabel(self,image=img,fg_color='white',text_color='black',width=400,height=500)
     def show(self):
         self.page_title.grid(row=0, column=0, sticky='nsew', padx=20, pady=20)
         self.logo.grid(row=0,column=0,sticky='nw',padx=20,pady=20)
