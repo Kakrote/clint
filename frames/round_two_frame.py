@@ -59,7 +59,7 @@ class Round_Two(ctk.CTkFrame):
         # adding timer label
         self.timer=ctk.CTkLabel(self,text='timer',fg_color='blue',width=70,height=30,text_color='white')
         # adding image for the quation in the frame
-        self.image=ctk.CTkLabel(self,text='image is here',fg_color='white',text_color='black',width=400,height=500)
+        self.image=ctk.CTkLabel(self,image="client/roundtwoimage/test.png",fg_color='white',text_color='black',width=400,height=500)
     def show(self):
         self.page_title.grid(row=0, column=0, sticky='nsew', padx=20, pady=20)
         self.logo.grid(row=0,column=0,sticky='nw',padx=20,pady=20)
