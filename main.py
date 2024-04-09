@@ -3,6 +3,8 @@ import tkinter
 from frames.login_frame import LoginFrame
 from frames.round_one_frame import Round_Frame
 from frames.round_two_frame import Round_Two
+from frames.round_three_frame import Round_Three
+from frames.round_four_frame import Round_Four
 class MainPanel(ctk.CTkFrame):
     loginframe=None
     def setActiveFrame(self,frame):
@@ -16,7 +18,9 @@ class MainPanel(ctk.CTkFrame):
         self.loginframe=LoginFrame(self)
         self.round_one_frame=Round_Frame(self)
         self.round_two_frame=Round_Two(self)
-        self.activeframe=self.round_two_frame
+        self.round_three_frame=Round_Three(self)
+        self.round_four_frame=Round_Four(self)
+        self.activeframe=self.round_four_frame
     def show(self):
         self.activeframe.show()
         self.pack(fill=tkinter.BOTH, expand=True,padx=20,pady=20)  # Fills and expands to center
