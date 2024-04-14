@@ -8,7 +8,7 @@ class Quation_Frame(ctk.CTkFrame):
         self.desplay_quations=ctk.CTkFrame(self,width=500,height=200,fg_color='white',border_color='black',border_width=2)
         qaution="who is this persion shown in the image"
         text_col='black'
-        self.l_question=ctk.CTkLabel(self.desplay_quations,text=qaution,fg_color='white',text_color='black',width=500,height=200)
+        self.l_question=ctk.CTkLabel(self.desplay_quations,text=qaution,font=('Garamond',20),fg_color='white',text_color='black',width=500,height=200)
         self.l_question.pack(expand=True,padx=20,pady=20,fill=tkinter.BOTH)
 
         
@@ -35,7 +35,8 @@ class Round_Two(ctk.CTkFrame):
     def __init__(self, master,**kwargs):
         super().__init__(master,**kwargs)
         #adding title to the page
-        self.page_title=ctk.CTkLabel(self,text="BUJHO TO JANO\n ROUND-2",fg_color="transparent",font=('Garamond', 50),text_color="#00FF00")
+        self.page_title=ctk.CTkLabel(self,text="BUJHO TO JANO",fg_color="transparent",font=('Garamond', 50),text_color="blue")
+        self.round_title=ctk.CTkLabel(self,text='ROUND 2',fg_color="transparent",font=('Garamond',14),text_color="black")
         # adding logo label
         self.logo=ctk.CTkLabel(self,text='Logo',fg_color="white",width=50,height=50,text_color="red")
         # adding timer label
@@ -46,6 +47,7 @@ class Round_Two(ctk.CTkFrame):
         self.image=ctk.CTkLabel(self,fg_color='white',text_color='black',width=400,height=500)#,image=img)
     def show(self):
         self.page_title.grid(row=0, column=0, sticky='nsew', padx=20, pady=20)
+        self.round_title.grid(row=1,column=0,sticky='nwe',padx=20,pady=0)
         self.logo.grid(row=0,column=0,sticky='nw',padx=20,pady=20)
         self.timer.grid(row=0,column=0,sticky='ne',padx=20,pady=20)
         self.image.grid(row=1,column=0,sticky='nw',padx=40,pady=20)

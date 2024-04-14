@@ -1,5 +1,6 @@
 import customtkinter as ctk
 import tkinter
+from frames.screen_saver import ScreenSaver
 from frames.login_frame import LoginFrame
 from frames.round_one_frame import Round_Frame
 from frames.round_two_frame import Round_Two
@@ -22,8 +23,9 @@ class MainPanel(ctk.CTkFrame):
         self.round_two_frame=Round_Two(self)
         self.round_three_frame=Round_Three(self)
         self.round_four_frame=Round_Four(self)
+        self.screensaver=ScreenSaver(self)
         
-        self.activeframe=self.round_three_frame
+        self.activeframe=self.screensaver
     def show(self):
         self.activeframe.show()
         self.pack(fill=tkinter.BOTH, expand=True,padx=20,pady=20)  # Fills and expands to center

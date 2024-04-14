@@ -7,7 +7,7 @@ class Entery(ctk.CTkFrame):
         super().__init__(master=master, fg_color='transparent',border_color="white",border_width=2, **kwargs)
 
         # for the icon 
-        self.icon=ctk.CTkLabel(self,fg_color="blue",width=100,height=100,text="icon goes here")
+        self.icon=ctk.CTkLabel(self,fg_color="blue",width=500,height=300,text="icon goes here")
         
 
         # Create user ID label with better styling (optional)
@@ -31,9 +31,9 @@ class Entery(ctk.CTkFrame):
     def show(self):
             # Organize elements using grid for precise layout
         self.icon.grid(row=0, column=0, padx=20, pady=10, sticky='we')
-        self.userid.grid(row=1, column=0, padx=20, pady=10, sticky='we')
-        self.e_userid.grid(row=2, column=0, padx=20, pady=10, sticky='we')
-        self.submit_b.grid(row=3, column=0, padx=20, pady=15, sticky='we')
+        self.userid.grid(row=1, column=0, padx=20, pady=10, )#sticky='we')
+        self.e_userid.grid(row=2, column=0, padx=20, pady=10, )#sticky='we')
+        self.submit_b.grid(row=3, column=0, padx=20, pady=15, )#sticky='we')
 
 
 # Main Login Frame (Enhanced)
