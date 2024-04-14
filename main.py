@@ -25,7 +25,7 @@ class MainPanel(ctk.CTkFrame):
         self.round_four_frame=Round_Four(self)
         self.screensaver=ScreenSaver(self)
         
-        self.activeframe=self.screensaver
+        self.activeframe=self.round_four_frame
     def show(self):
         self.activeframe.show()
         self.pack(fill=tkinter.BOTH, expand=True,padx=20,pady=20)  # Fills and expands to center
