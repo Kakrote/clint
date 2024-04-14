@@ -5,6 +5,8 @@ from frames.round_one_frame import Round_Frame
 from frames.round_two_frame import Round_Two
 from frames.round_three_frame import Round_Three
 from frames.round_four_frame import Round_Four
+ctk.set_appearance_mode('light')
+
 class MainPanel(ctk.CTkFrame):
     loginframe=None
     def setActiveFrame(self,frame):
@@ -12,7 +14,7 @@ class MainPanel(ctk.CTkFrame):
         app.mainpanel.activeframe=frame
         app.mainpanel.activeframe.show()
     def __init__(self,master,**kwargs):
-        super().__init__(master=master,fg_color="transparent",border_color="white",border_width=2,**kwargs)
+        super().__init__(master=master,fg_color="transparent",border_color="black",border_width=2,**kwargs)
         self.grid_columnconfigure(0,weight=1)
         self.grid_rowconfigure(0,weight=1)
         self.loginframe=LoginFrame(self)
@@ -20,7 +22,8 @@ class MainPanel(ctk.CTkFrame):
         self.round_two_frame=Round_Two(self)
         self.round_three_frame=Round_Three(self)
         self.round_four_frame=Round_Four(self)
-        self.activeframe=self.round_two_frame
+        
+        self.activeframe=self.round_three_frame
     def show(self):
         self.activeframe.show()
         self.pack(fill=tkinter.BOTH, expand=True,padx=20,pady=20)  # Fills and expands to center
