@@ -1,11 +1,13 @@
 import customtkinter as ctk
 import tkinter
+
 from frames.screen_saver import ScreenSaver
 from frames.login_frame import LoginFrame
 from frames.round_one_frame import Round_Frame
 from frames.round_two_frame import Round_Two
 from frames.round_three_frame import Round_Three
 from frames.round_four_frame import Round_Four
+from frames.leaderbord import LeaderBord
 ctk.set_appearance_mode('light')
 
 class MainPanel(ctk.CTkFrame):
@@ -24,6 +26,7 @@ class MainPanel(ctk.CTkFrame):
         self.round_three_frame=Round_Three(self)
         self.round_four_frame=Round_Four(self)
         self.screensaver=ScreenSaver(self)
+        self.leaderbord=LeaderBord(self)
         
         self.activeframe=self.round_four_frame
     def show(self):

@@ -1,6 +1,12 @@
 #   round three frame only.
 import customtkinter as ctk
 import tkinter
+class ClientQuestion():
+    def __init__(self, qid, text, options, imgPath) -> None:
+        self.qid = qid
+        self.text = text
+        self.options = options
+        self.imgPath = imgPath
 
 class Quation_Frame(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
@@ -52,3 +58,18 @@ class Round_Three(ctk.CTkFrame):
         self.timer.grid(row=0,column=0,sticky='ne',padx=20,pady=20)
         self.grid_columnconfigure(0, weight=1) 
         self.pack(fill=tkinter.BOTH, expand=True, padx=20, pady=20)
+
+        self.setQ(
+                ClientQuestion(1, "ABC","A,adsf,df,adsf",None),
+             )
+
+
+    def setQ(self, q:ClientQuestion):
+        self.curr_q = q
+        self.quation_frame.l_question.configure(text=q.text)
+        options = q.options.split(",")
+        self.quation_frame.b_option1.configure(text=options[0])
+        self.quation_frame.b_option2.configure(text=options[1])
+        self.quation_frame.b_option3.configure(text=options[2])
+        self.quation_frame.b_option4.configure(text=options[3])
+

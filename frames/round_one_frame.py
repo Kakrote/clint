@@ -9,7 +9,7 @@ class Quation_Frame(ctk.CTkFrame):
     def show(self):
         self.quation_label.grid(row=0,column=0,sticky='nesw',padx=20,pady=20)
         
-class Round_Frame(ctk.CTkFrame,ctk.CTk):
+class Round_Frame(ctk.CTkFrame):
     def __init__(self, master, **kwargs):
         super().__init__(master, **kwargs)
         self.grid_columnconfigure(0, weight=1)
